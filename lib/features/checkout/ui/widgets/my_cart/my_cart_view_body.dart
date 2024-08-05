@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/core/utils/styles.dart';
 import 'package:payment/core/widget/app_text_button.dart.dart';
+import 'package:payment/features/checkout/ui/payment_details.dart';
 import 'package:payment/features/checkout/ui/widgets/my_cart/OrderInfoItem.dart';
 import 'package:payment/features/checkout/ui/widgets/my_cart/total_price.dart';
 
@@ -42,7 +43,15 @@ class MyCartViewBody extends StatelessWidget {
           AppTextButton(
             buttonText: 'Complete Payment',
             textStyle: Styles.styleMedium22,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PaymentDetails();
+                  },
+                ),
+              );
+            },
           ),
           SizedBox(height: 12.h)
         ],

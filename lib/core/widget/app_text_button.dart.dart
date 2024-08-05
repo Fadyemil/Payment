@@ -42,9 +42,9 @@ class AppTextButton extends StatelessWidget {
             vertical: verticalPadding?.h ?? 14.h,
           ),
         ),
-        // fixedSize: WidgetStateProperty.all(
-        //   Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
-        // ),
+        fixedSize: WidgetStateProperty.all(
+          Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
+        ),
       ),
       onPressed: onPressed,
       child: Align(
