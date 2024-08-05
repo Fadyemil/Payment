@@ -10,7 +10,7 @@ AppBar buildAppBar({final String? title}) {
     elevation: 0,
     scrolledUnderElevation: 0,
     title: Text(
-      '$title',
+      title ?? '',
       style: Styles.styleMedium25,
     ),
     leading: Center(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/core/utils/styles.dart';
 import 'package:payment/core/widget/app_text_button.dart.dart';
+import 'package:payment/features/checkout/ui/thank_you_view.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_details/custom_credit_card.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_details/payment_method_list_view.dart';
 
@@ -49,9 +50,13 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                     formKey.currentState!.save();
                     log('payment');
                   } else {
-                    autovalidateMode = AutovalidateMode.always;
-                    setState(() {});
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const ThankYouView();
+                    }));
                   }
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
                 },
               ),
             ),

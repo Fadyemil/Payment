@@ -9,11 +9,13 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.6
+  dotted_dashed_line: ^0.0.3
   flutter:
     sdk: flutter
   flutter_credit_card: ^4.0.1
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
