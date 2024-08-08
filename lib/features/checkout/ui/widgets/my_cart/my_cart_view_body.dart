@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/core/utils/styles.dart';
 import 'package:payment/core/widget/app_text_button.dart.dart';
+import 'package:payment/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:payment/features/checkout/ui/manger/payment_stripe/payment_stripe_cubit.dart';
 import 'package:payment/features/checkout/ui/widgets/my_cart/OrderInfoItem.dart';
-import 'package:payment/features/checkout/ui/widgets/my_cart/PaymentMethodsBottomSheet.dart';
+import 'package:payment/features/checkout/ui/widgets/my_cart/payment_methods_bottom_sheet.dart';
 import 'package:payment/features/checkout/ui/widgets/my_cart/total_price.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -57,7 +60,10 @@ class MyCartViewBody extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                   builder: (context) {
-                    return const PaymentMethodsBottomSheet();
+                    return BlocProvider(
+                      create: (context) => PaymentStripeCubit(CheckoutRepoImpl()),
+                      child: const PaymentMethodsBottomSheet(),
+                    );
                   });
             },
           ),
