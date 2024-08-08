@@ -11,6 +11,7 @@ class AppTextButton extends StatelessWidget {
   final String buttonText;
   final TextStyle textStyle;
   final VoidCallback onPressed;
+  final bool isLoading;
   const AppTextButton({
     super.key,
     this.borderRadius,
@@ -22,6 +23,7 @@ class AppTextButton extends StatelessWidget {
     required this.buttonText,
     required this.textStyle,
     required this.onPressed,
+    this.isLoading = false,
   });
 
   @override
@@ -49,10 +51,12 @@ class AppTextButton extends StatelessWidget {
       onPressed: onPressed,
       child: Align(
         alignment: Alignment.center,
-        child: Text(
-          buttonText,
-          style: textStyle,
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : Text(
+                buttonText,
+                style: textStyle,
+              ),
       ),
     );
   }
