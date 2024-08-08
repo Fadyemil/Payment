@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:payment/core/utils/api_keys.dart';
 import 'package:payment/features/checkout/ui/my_cart_view.dart';
 
 void main() {
+  Stripe.publishableKey = ApiKeys.publishableKey;
   runApp(const CheckoutApp());
 }
 
@@ -27,3 +30,8 @@ class CheckoutApp extends StatelessWidget {
     );
   }
 }
+
+// PaymentIntentModel create payment intent(amount , currency , customerId)
+// keySecret createEphemeralKey( customerId)
+// initPaymentSheet (merchantDisplayName , intentClientSecret , ephemeralKeySecret)
+// presentPaymentSheet()
