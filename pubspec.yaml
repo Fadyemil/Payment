@@ -9,9 +9,12 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.6
+  dartz: ^0.10.1
+  dio: ^5.5.0+1
   dotted_dashed_line: ^0.0.3
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_credit_card: ^4.0.1
   flutter_screenutil: ^5.9.3
   flutter_stripe: ^11.0.0
