@@ -11,7 +11,7 @@ class PaymentIntentInputModel {
 
   toJson() {
     return {
-      'amount': '${amount}00',
+      'amount': (double.parse(amount) * 100).round(),
       'currency': currency,
       'customer': cusomerId
     };
