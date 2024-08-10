@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_details/payment_method_item.dart';
 
 class PaymentMethodListView extends StatefulWidget {
-  const PaymentMethodListView({super.key});
+  const PaymentMethodListView({super.key, required this.updatePaymentMethod});
+  final Function({required int index}) updatePaymentMethod;
 
   @override
   State<PaymentMethodListView> createState() => _PaymentMethodListViewState();
@@ -31,6 +32,7 @@ class _PaymentMethodListViewState extends State<PaymentMethodListView> {
                 setState(() {
                   activeIndex = index;
                 });
+                 widget.updatePaymentMethod(index: activeIndex);
               },
               child: PaymentMethodItem(
                 isActive: activeIndex == index,

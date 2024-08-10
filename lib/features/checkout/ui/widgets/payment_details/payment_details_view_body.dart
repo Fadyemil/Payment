@@ -6,7 +6,6 @@ import 'package:payment/core/utils/styles.dart';
 import 'package:payment/core/widget/app_text_button.dart.dart';
 import 'package:payment/features/checkout/ui/thank_you_view.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_details/custom_credit_card.dart';
-import 'package:payment/features/checkout/ui/widgets/payment_details/payment_method_list_view.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
   const PaymentDetailsViewBody({super.key});
@@ -23,9 +22,9 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
-          child: PaymentMethodListView(),
-        ),
+        // const SliverToBoxAdapter(
+        //   child: PaymentMethodListView(updatePaymentMethod: (int index) {  },),
+        // ),
         SliverToBoxAdapter(
           child: CustomCreditCard(
             formkey: formKey,
