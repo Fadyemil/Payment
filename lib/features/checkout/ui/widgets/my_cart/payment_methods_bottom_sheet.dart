@@ -32,14 +32,15 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(height: 16.h),
-          const PaymentMethodListView(
-              // updatePaymentMethod: updatePaymentMethod,
+           PaymentMethodListView(
+              updatePaymentMethod: updatePaymentMethod,
               ),
           SizedBox(height: 32.h),
-          CustomButtomBlocConsumer()
+          CustomButtomBlocConsumer(
+            isPaypal: isPaypal,
+          )
         ],
       ),
     );
   }
 }
-
