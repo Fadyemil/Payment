@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:payment/core/cache/cach_helper.dart';
 import 'package:payment/core/utils/api_keys.dart';
 import 'package:payment/features/checkout/ui/my_cart_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  CacheHelper().init();
   Stripe.publishableKey = ApiKeys.publishableKey;
   runApp(const CheckoutApp());
 }
